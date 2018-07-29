@@ -3,7 +3,6 @@ Domínio utilizado: ru.net
 Nome da máquina (hostname): dns
 
 sudo apt-get install vim
-sudo vim /etc/bind/named.conf.options
 
 /configurar interface de rede
 sudo vim /etc/network/interfaces
@@ -68,8 +67,8 @@ sudo cp db.local db.ru.net
 sudo cp db.127 db.10
 sudo vim db.ru.net
 //entrar em modo de inserção
-/na linha do SOA subistituir o primeiro localhost por dns.ru.net
-//substituir o segundo localhost por lih.net
+/na linha do SOA subistituir o primeiro localhost por dns.ru.net.
+//substituir o segundo localhost por ru.net.
 //após o ; acrescentar as seguintes linhas
 //usar tabulação e excluir a linha de localhost
 ru.net.	IN	NS	dns.ru.net.
@@ -81,12 +80,12 @@ www	IN	CNAME	ru.net.
 //salvar e sair
 sudo vim db.10
 //entrar em modo de inserção
-/na linha do SOA subistituir o primeiro localhost por dns.ru.net
-//substituir o segundo localhost por ru.net
+/na linha do SOA subistituir o primeiro localhost por dns.ru.net.
+//substituir o segundo localhost por ru.net.
 //após o ; apagar as linhas e acrescentar as seguintes
 		IN		NS	dns.
 1		IN		PTR	roteador.ru.net.
-200		IN		PTR	web.ruh.net.
+200		IN		PTR	web.ru.net.
 100		IN		PTR	dns.ru.net.
 //salvar e sair
 sudo /etc/init.d/bind9 restart

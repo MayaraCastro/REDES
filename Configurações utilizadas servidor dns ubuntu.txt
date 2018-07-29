@@ -1,0 +1,102 @@
+Utilizado Ubuntu 16.04.4 amd64 desktop numa VM conectado a placa de rede modo NAT
+Domínio utilizado: ru.net
+Nome da máquina (hostname): dns
+
+sudo apt-get install vim
+sudo vim /etc/bind/named.conf.options
+
+/configurar interface de rede
+sudo vim /etc/network/interfaces
+//clicar na tecla i para entrar no modo de edição
+auto enp0s3
+iface enp0s3 inet static
+address 10.26.0.100
+netmask 255.255.254.0
+network 10.26.0.0
+broadcast 10.26.1.255
+gateway 10.26.0.1
+//clicar na tecla esc para voltar ao modo de comandos
+:wq
+
+//configurar hostname do servidor
+sudo vim /etc/hosts
+//entrar no modo de inserção
+10.26.0.100 //tab	dns.ru.net dns
+//sair do modo de edição
+:wq
+
+//para alterar o hostname entrar em /etc/hostname e alterar a linha
+sudo vim /etc/hostname
+	alterar para "dns"	//ou o nome que quiser dar a maquina atentando a mudar no restante desse tutorial
+sudo reboot //reiniciar a máquina
+
+sudo vim /etc/resolv.conf //arquivo do cliente DNS
+/entrar em modo de inserção
+nameserver 8.8.8.8
+:wq
+//para instalar os pacotes necessários
+sudo apt-get install bind9
+cd /etc/bind
+sudo vim named.conf.local
+//entrar em modo de inserção
+//pular uma linha e colocar
+//Zona de pesquisa direta
+zone "ru.net" {
+	type master;
+	file "/etc/bind/db.ru.net";
+};
+
+//Zona de pesquisa reversa
+zone "0.26.10.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.10";
+};
+//sair do modo de inserção
+//salvar
+
+sudo vim named.conf.options
+//adicionar a seguinte linha para permitir consultas ao dns dentro da clausula options
+allowed-query { any; };
+//descomentar as linhas de forwarders
+//e adicionar os endereços dos servidores dns que resolverão
+10.26.0.1;		//gateway da rede
+8.8.8.8;		//dns do google
+8.8.4.4;
+//se ele não resolver.
+//salvar
+sudo cp db.local db.ru.net
+sudo cp db.127 db.10
+sudo vim db.ru.net
+//entrar em modo de inserção
+/na linha do SOA subistituir o primeiro localhost por dns.ru.net
+//substituir o segundo localhost por lih.net
+//após o ; acrescentar as seguintes linhas
+//usar tabulação e excluir a linha de localhost
+ru.net.	IN	NS	dns.ru.net.
+ru.net.	IN	A	10.26.0.100
+dns	IN	A	10.26.0.100
+roteador	IN	A	10.26.0.1
+web	IN	A	10.26.0.200
+www	IN	CNAME	ru.net.
+//salvar e sair
+sudo vim db.10
+//entrar em modo de inserção
+/na linha do SOA subistituir o primeiro localhost por dns.ru.net
+//substituir o segundo localhost por ru.net
+//após o ; apagar as linhas e acrescentar as seguintes
+		IN		NS	dns.
+1		IN		PTR	roteador.ru.net.
+200		IN		PTR	web.ruh.net.
+100		IN		PTR	dns.ru.net.
+//salvar e sair
+sudo /etc/init.d/bind9 restart
+//para verificar se está tudo correto nos arquivos criados
+named-checkzone lih.net /etc/bind/db.lih.net
+named-checkzone lih.net /etc/bind/db.10
+sudo reboot
+ping www.google.com
+
+//opicional
+sudo apt install traceroute
+
+direitos autorais de https://drive.google.com/drive/folders/1aGR0TC2XcdYkWPHDwn9Rw1V90POqLc6C

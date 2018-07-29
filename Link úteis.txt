@@ -1,0 +1,10 @@
+	//NAT no gns3:
+https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/13772-12.html#topic2
+
+	//Servidor DNS:
+https://gns3.readthedocs.io/pt/latest/09%20-%20Servidor%20DNS/
+https://www.youtube.com/watch?v=0SSSfyy7bO4&t=613s
+
+	//Conexão gns3 com internet:
+http://ciscoluso.blogspot.com/2013/03/acesso-do-gns3-internet-1-no-virtual.html
+https://docs.gns3.com/1EjaCJlcM0RYIyyE_MbJOYNatEBnffOX5tcnJShR_KfY/index.html

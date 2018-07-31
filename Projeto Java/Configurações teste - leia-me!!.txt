@@ -1,0 +1,3 @@
+Para rodar a classe main crie um database em localhost de nome teste.
+Para modificar o nome do database basta mudar dentro do arquivo persistence.xml.
+Para melhor entendimento acesse o link para uso do hibernate + jpa.

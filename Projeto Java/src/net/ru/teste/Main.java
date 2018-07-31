@@ -40,6 +40,9 @@ public class Main {
 
 	    System.out.println(encontrado.getDescricao());
 	    
+		manager.close();
+		factory.close();
+	    
 	}
 
 	public static void main(String[] args) {

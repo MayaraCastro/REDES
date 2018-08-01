@@ -5,13 +5,14 @@
     version="2.0">
 
  <persistence-unit name="teste">
-
+   
    <!-- provedor/implementacao do JPA -->
    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-   <!-- entidade mapeada -->
+   <!-- entidades mapeadas nessa unidade de persistência -->
    <class>net.ru.negocio.beans.Teste</class>
-
+   <class>net.ru.negocio.beans.Tested</class>
+   
    <properties>
     <!-- dados da conexao -->
      <property name="javax.persistence.jdbc.driver" 
@@ -24,8 +25,7 @@
             value="" />
 
      <!--  propriedades do hibernate -->
-     <property name="hibernate.dialect" 
-            value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+    <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
     <property name="hibernate.show_sql" value="true" />
     <property name="hibernate.format_sql" value="true" />
 
@@ -33,5 +33,5 @@
     <property name="hibernate.hbm2ddl.auto" value="update" />
 
    </properties>
- </persistence-unit>
+   </persistence-unit>
 </persistence>

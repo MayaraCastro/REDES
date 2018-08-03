@@ -19,12 +19,12 @@ public class TesteUser {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		Usuario user = new Usuario(110109, "12", "Aleatorio");
+		Usuario user = new Usuario(110109874, "12", "Aleatorio");
 		Almoco a = new Almoco(Calendar.getInstance());
 		try {
 			//gu.insereUsuario(user);
 			gu.login(user.getCpf(), user.getPassword());
-			gc.adicionaAlmoco(a);
+			//gc.adicionaAlmoco(a);
 			gc.adicionaUsuarioDietaAlmoco(user, Calendar.getInstance());
 			//gu.removeUsuario(user.getCpf());
 			//user.setCpf(11010);

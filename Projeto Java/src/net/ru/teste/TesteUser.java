@@ -14,10 +14,14 @@ public class TesteUser {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		Usuario user = new Usuario(110109, "123", "Aleatorio");
+		Usuario user = new Usuario(110109, "12", "Aleatorio");
 		try {
 			//gu.insereUsuario(user);
 			gu.login(user.getCpf(), user.getPassword());
+			//gu.removeUsuario(user.getCpf());
+			//user.setCpf(11010);
+			//user.setPassword("123");
+			//gu.atualizaUsuario(user);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

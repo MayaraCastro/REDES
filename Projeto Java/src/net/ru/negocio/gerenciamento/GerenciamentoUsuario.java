@@ -6,6 +6,7 @@ import net.ru.persistencia.Persistencia;
 public class GerenciamentoUsuario {
 
 	private Persistencia p;
+	private Usuario logado;
 	
 	public GerenciamentoUsuario() {
 		this.p = Persistencia.getInstance();
@@ -28,6 +29,7 @@ public class GerenciamentoUsuario {
 		if (!log.getPassword().equals(password))
 			throw new Exception("Senha incorreta");
 		//Aqui vai o código do usuário logado
+		this.logado = log;
 		System.out.println("Bem vindo " + log.getNome());
 	}
 	
@@ -40,6 +42,8 @@ public class GerenciamentoUsuario {
 	}
 	
 	public void atualizaUsuario(Usuario a) throws Exception {
+		if (a.getCpf() != logado.getCpf())
+			throw new Exception("Não é possível modificar o seu cpf");
 		try {
 			p.atualiza(a);
 		} catch (Exception e) {
@@ -47,9 +51,10 @@ public class GerenciamentoUsuario {
 		}
 	}
 	
-	public void removeUsuario(Usuario r) throws Exception {
+	public void removeUsuario(int cpf) throws Exception {
 		try {
-			p.remove(r);
+			Usuario remove = (Usuario) p.busca(Usuario.class, cpf);
+			p.remove(remove);
 		} catch (Exception e) {
 			throw new Exception("Usuário não encontrado");
 		}
@@ -61,6 +66,10 @@ public class GerenciamentoUsuario {
 		} catch (Exception e) {
 			throw new Exception("Usuário já existente");
 		}
+	}
+
+	public Usuario getLogado() {
+		return logado;
 	}
 	
 }

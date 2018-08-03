@@ -19,12 +19,12 @@ public class TesteUser {
 		}
 		Usuario user = new Usuario(11010987, "12", "Aleatorio");
 		Calendar b = Calendar.getInstance();
-		b.set(2018, 8, 04);
+		b.set(2018, 8, 05);
 		Almoco a = new Almoco(b);
 		try {
-			f.insereUsuario(user);
+			//f.insereUsuario(user);
 			f.login(user.getCpf(), user.getPassword());
-			f.adicionaAlmoco(a);
+			//f.adicionaAlmoco(a);
 			f.adicionaUsuarioDietaAlmoco(user, b);
 			//f.removeUsuario(user.getCpf());
 			//user.setCpf(11010);

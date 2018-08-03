@@ -59,19 +59,19 @@ public class Fachada {
 		gc.adicionaJantar(j);
 	}
 	
-	public void adicionaUsuarioVegetarianoAlmoco(Usuario user, Calendar dia) {
+	public void adicionaUsuarioVegetarianoAlmoco(Usuario user, Calendar dia) throws Exception {
 		gc.adicionaUsuarioVegetarianoAlmoco(user, dia);
 	}
 	
-	public void adicionaUsuarioDietaAlmoco(Usuario user, Calendar dia) {
+	public void adicionaUsuarioDietaAlmoco(Usuario user, Calendar dia) throws Exception {
 		gc.adicionaUsuarioDietaAlmoco(user, dia);
 	}
 	
-	public void adicionaUsuarioVegetarianoJantar(Usuario user, Calendar dia) {
+	public void adicionaUsuarioVegetarianoJantar(Usuario user, Calendar dia) throws Exception {
 		gc.adicionaUsuarioVegetarianoJantar(user, dia);
 	}
 	
-	public void adicionaUsuarioDietaJantar(Usuario user, Calendar dia) {
+	public void adicionaUsuarioDietaJantar(Usuario user, Calendar dia) throws Exception {
 		gc.adicionaUsuarioDietaJantar(user, dia);
 	}
 	

@@ -3,6 +3,7 @@ package net.ru.persistencia;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.Properties;
 
@@ -65,6 +66,10 @@ public class Persistencia {
 	}
 	
 	public Object busca(Class<?> c, String id) {
+		return manager.find(c, id);
+	}
+	
+	public Object busca(Class<?> c, Calendar id) {
 		return manager.find(c, id);
 	}
 	

@@ -4,37 +4,37 @@ import java.util.Calendar;
 
 import net.ru.negocio.beans.Almoco;
 import net.ru.negocio.beans.Usuario;
-import net.ru.negocio.gerenciamento.GerenciamentoCardapio;
-import net.ru.negocio.gerenciamento.GerenciamentoUsuario;
+import net.ru.negocio.gerenciamento.Fachada;
 
 public class TesteUser {
 
 	public static void main(String[] args) {
 
-		GerenciamentoUsuario gu = new GerenciamentoUsuario();
-		GerenciamentoCardapio gc = new GerenciamentoCardapio();
+		Fachada f = Fachada.getInstance();
 		
 		try {
-			gu.conexao("root", "");
+			f.conexao("root", "");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		Usuario user = new Usuario(110109874, "12", "Aleatorio");
-		Almoco a = new Almoco(Calendar.getInstance());
+		Usuario user = new Usuario(11010987, "12", "Aleatorio");
+		Calendar b = Calendar.getInstance();
+		b.set(2018, 8, 04);
+		Almoco a = new Almoco(b);
 		try {
-			//gu.insereUsuario(user);
-			gu.login(user.getCpf(), user.getPassword());
-			//gc.adicionaAlmoco(a);
-			gc.adicionaUsuarioDietaAlmoco(user, Calendar.getInstance());
-			//gu.removeUsuario(user.getCpf());
+			f.insereUsuario(user);
+			f.login(user.getCpf(), user.getPassword());
+			f.adicionaAlmoco(a);
+			f.adicionaUsuarioDietaAlmoco(user, b);
+			//f.removeUsuario(user.getCpf());
 			//user.setCpf(11010);
 			//user.setPassword("123");
-			//gu.atualizaUsuario(user);
+			//f.atualizaUsuario(user);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		try {
-			gu.logout();
+			f.logout();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

@@ -17,7 +17,7 @@ public class Fachada {
 		this.gc = new GerenciamentoCardapio();
 	}
 	
-	public Fachada getInstance() {
+	public static Fachada getInstance() {
 		if (instance == null)
 			instance = new Fachada();
 		return instance;

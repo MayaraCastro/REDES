@@ -45,12 +45,12 @@
 
 <View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.ru.gui.menuPrincipal.MenuPrincipalController">
    <center>
-      <CardPane fx:id="lista_dias_da_semana" onMouseClicked="#pegar" BorderPane.alignment="CENTER">
-          <Label onMouseClicked="#pegar" prefHeight="38.0" prefWidth="318.0" style="-fx-padding:10;" text="Segunda-feira" />
-          <Label style="-fx-padding:10;" text="Terça-feira" />
-          <Label style="-fx-padding:10;" text="Quarta-feira" />
-         <Label style="-fx-padding:10;" text="Quinta-feira" />
-         <Label style="-fx-padding:10;" text="Sexta-feira" />
+      <CardPane fx:id="lista_dias_da_semana" prefHeight="568.0" prefWidth="335.0" BorderPane.alignment="CENTER">
+          <Label fx:id="segunda" onMouseClicked="#segunda" prefHeight="38.0" prefWidth="318.0" style="-fx-padding:10;" text="Segunda-feira" />
+          <Label fx:id="terca" onMouseClicked="#terca" prefHeight="37.0" prefWidth="318.0" style="-fx-padding:10;" text="Terça-feira" />
+          <Label fx:id="quarta" onMouseClicked="#quarta" prefHeight="37.0" prefWidth="327.0" style="-fx-padding:10;" text="Quarta-feira" />
+         <Label fx:id="quinta" onMouseClicked="#quinta" prefHeight="37.0" prefWidth="329.0" style="-fx-padding:10;" text="Quinta-feira" />
+         <Label fx:id="sexta" onMouseClicked="#sexta" prefHeight="37.0" prefWidth="343.0" style="-fx-padding:10;" text="Sexta-feira" />
       </CardPane>
    </center>
    <top>

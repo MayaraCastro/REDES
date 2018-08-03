@@ -4,6 +4,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import java.util.List;
+import java.util.Properties;
 
 import javax.persistence.EntityManager;
 
@@ -11,9 +12,12 @@ public class Persistencia {
 
 	private EntityManagerFactory factory;
 	private EntityManager manager;
+	private String unitPersistence;
 	private static Persistencia instance;
 	
-	private Persistencia() {}
+	private Persistencia() {
+		this.unitPersistence = "teste";
+	}
 	
 	public static Persistencia getInstance() {
 		if (instance == null)
@@ -21,11 +25,13 @@ public class Persistencia {
 		return instance;
 	}
 	
-	public void iniciaConexao(String unitPersistence) {
-		if (this.factory == null || !this.factory.isOpen())
-			this.factory = Persistence.createEntityManagerFactory(unitPersistence);
-		if (this.manager == null || !this.manager.isOpen())
-			this.manager = this.factory.createEntityManager();
+	public void conexao(String hostname, String user, String password) {
+		Properties properties = new Properties();
+		properties.put("javax.persistence.jdbc.url", "jdbc:mysql://" + hostname + "/teste");
+		properties.put("javax.persistence.jdbc.user", user);
+		properties.put("javax.persistence.jdbc.password", password);
+		this.factory = Persistence.createEntityManagerFactory(unitPersistence, properties);
+		this.manager = this.factory.createEntityManager();
 	}
 	
 	public void fechaConexao() {

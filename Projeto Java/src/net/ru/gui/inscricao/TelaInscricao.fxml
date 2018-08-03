@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
+<?import com.gluonhq.charm.glisten.mvc.View?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<View maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="335.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.ru.gui.inscricao.InscricaoController">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="botao_salvar" layoutX="141.0" layoutY="257.0" onAction="#salvar" ripplerFill="WHITE" style="-fx-background-color: ffd034;" text="Salvar" textFill="WHITE" />
+            <ToggleButtonGroup fx:id="opcaoAlmoco" layoutX="45.0" layoutY="72.0" selectionType="SINGLE">
+               <toggles>
+                  <RadioButton mnemonicParsing="false" text="Dieta  " />
+                  <RadioButton mnemonicParsing="false" text="Vegetariano" />
+               </toggles>
+            </ToggleButtonGroup>
+            <Label layoutX="45.0" layoutY="52.0" text="Almoço">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ToggleButtonGroup fx:id="opcaoJantar" layoutX="45.0" layoutY="140.0" prefHeight="18.0" prefWidth="157.0" selectionType="SINGLE">
+               <toggles>
+                  <RadioButton mnemonicParsing="false" text="Dieta  " />
+                  <RadioButton mnemonicParsing="false" text="Vegetariano" />
+               </toggles>
+            </ToggleButtonGroup>
+            <Label layoutX="45.0" layoutY="120.0" text="Jantar">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="14.0" text="Selecionne as opções desejadas:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <Pane prefHeight="55.0" prefWidth="335.0" style="-fx-background-color: ffd034;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#voltar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../cardapio/back.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="1.0" contrast="-0.38" />
+               </effect>
+            </ImageView>
+            <Label layoutX="43.0" layoutY="10.0" text="Inscrição nos Cardápios" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+</View>

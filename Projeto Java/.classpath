@@ -18,7 +18,6 @@
 	<classpathentry kind="lib" path="classpath/mysql-connector-java-5.1.45-bin.jar"/>
 	<classpathentry kind="lib" path="src/charm-down-core-3.8.0.jar"/>
 	<classpathentry kind="lib" path="src/charm-glisten-4.4.1.jar"/>
-	<classpathentry kind="lib" path="src/jfoenix-9.0.5.jar"/>
 	<classpathentry kind="lib" path="src/jfoenix.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

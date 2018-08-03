@@ -15,12 +15,20 @@ public class GerenciamentoCardapio {
 		this.p = Persistencia.getInstance();
 	}
 	
-	public void adicionaAlmoco(Almoco a) {
-		p.persiste(a);
+	public void adicionaAlmoco(Almoco a) throws Exception {
+		try {
+			p.persiste(a);
+		} catch (Exception e) {
+			throw new Exception("Almoço já existente para esse dia");
+		}
 	}
 	
-	public void adicionaJantar(Jantar j) {
-		p.persiste(j);
+	public void adicionaJantar(Jantar j) throws Exception {
+		try {
+			p.persiste(j);
+		} catch (Exception e) {
+			throw new Exception("Jantar já existente para esse dia");
+		}	
 	}
 	
 	public void adicionaUsuarioVegetarianoAlmoco(Usuario user, Calendar dia) {
@@ -45,6 +53,14 @@ public class GerenciamentoCardapio {
 		Jantar j = (Jantar) p.busca(Jantar.class, dia);
 		j.getDieta().add(user);
 		p.atualiza(j);
+	}
+	
+	public Almoco getAlmoco(Calendar dia) {
+		return (Almoco) p.busca(Almoco.class, dia);
+	}
+	
+	public Jantar getJantar(Calendar dia) {
+		return (Jantar) p.busca(Jantar.class, dia);
 	}
 	
 }

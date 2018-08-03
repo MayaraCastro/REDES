@@ -51,11 +51,11 @@ public class Fachada {
 		return gu.getLogado();
 	}
 	
-	public void adicionaAlmoco(Almoco a) {
+	public void adicionaAlmoco(Almoco a) throws Exception {
 		gc.adicionaAlmoco(a);
 	}
 	
-	public void adicionaJantar(Jantar j) {
+	public void adicionaJantar(Jantar j) throws Exception {
 		gc.adicionaJantar(j);
 	}
 	
@@ -73,6 +73,14 @@ public class Fachada {
 	
 	public void adicionaUsuarioDietaJantar(Usuario user, Calendar dia) {
 		gc.adicionaUsuarioDietaJantar(user, dia);
+	}
+	
+	public Almoco getAlmoco(Calendar dia) {
+		return gc.getAlmoco(dia);
+	}
+	
+	public Jantar getJantar(Calendar dia) {
+		return gc.getJantar(dia);
 	}
 	
 }

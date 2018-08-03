@@ -1,15 +1,12 @@
-<persistence xmlns="http://java.sun.com/xml/ns/persistence"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
-     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-	version="2.0">
-	
-	<persistence-unit name="ru">
+Colocar a seguinte unidade de persistencia no persistence.xml:
+
+<persistence-unit name="teste">
 		<!-- provedor/implementacao do JPA -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<!-- entidades mapeadas nessa unidade de persistÃªncia -->
-		<class>net.ru.negocio.beans.Usuario</class>
+		<!-- entidades mapeadas nessa unidade de persistência -->
+		<class>net.ru.negocio.beans.Teste</class>
+		<class>net.ru.negocio.beans.Tested</class>
 
 		<properties>
 			<!-- dados da conexao -->
@@ -24,4 +21,3 @@
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
-</persistence>

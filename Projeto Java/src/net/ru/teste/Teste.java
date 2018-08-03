@@ -1,10 +1,10 @@
-package net.ru.negocio.beans;
+package net.ru.teste;
 
 import java.util.Calendar;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Teste {
 	
 	@Id

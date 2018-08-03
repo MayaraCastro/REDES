@@ -8,8 +8,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import net.ru.negocio.beans.Teste;
-import net.ru.negocio.beans.Tested;
 import net.ru.persistencia.Persistencia;
 
 @SuppressWarnings("unused")
@@ -57,9 +55,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		Main m = new Main();
-		m.p.conexao("localhost", "root", "");
-		m.insereTested("Lets go", false);
-		m.insereTested("Do this", true);
+		try {
+			m.p.conexao("localhost", "root", "");
+		} catch (Exception e) {
+			System.out.println("Erro, usuário inexistente!");
+		}
+		//m.insereTested("Lets go", false);
+		//m.insereTested("Do this", true);
+		//m.testeBusca(2);
 		m.p.fechaConexao();
 		
 		//(new Main()).testeInsercao();				//insere um teste

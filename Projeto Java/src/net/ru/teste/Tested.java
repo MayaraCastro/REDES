@@ -1,8 +1,8 @@
-package net.ru.negocio.beans;
+package net.ru.teste;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Tested {
 
 	@Id

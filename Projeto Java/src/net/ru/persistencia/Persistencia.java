@@ -16,7 +16,8 @@ public class Persistencia {
 	private static Persistencia instance;
 	
 	private Persistencia() {
-		this.unitPersistence = "teste";
+		//Para testar mude para "teste" (ver no persistence.xml)
+		this.unitPersistence = "ru";
 	}
 	
 	public static Persistencia getInstance() {
@@ -27,7 +28,7 @@ public class Persistencia {
 	
 	public void conexao(String hostname, String user, String password) {
 		Properties properties = new Properties();
-		properties.put("javax.persistence.jdbc.url", "jdbc:mysql://" + hostname + "/teste");
+		properties.put("javax.persistence.jdbc.url", "jdbc:mysql://" + hostname + "/ru");
 		properties.put("javax.persistence.jdbc.user", user);
 		properties.put("javax.persistence.jdbc.password", password);
 		this.factory = Persistence.createEntityManagerFactory(unitPersistence, properties);

@@ -22,9 +22,9 @@ public class TesteUser {
 		b.set(2018, 8, 05);
 		Almoco a = new Almoco(b);
 		try {
-			//f.insereUsuario(user);
+			f.insereUsuario(user);
 			f.login(user.getCpf(), user.getPassword());
-			//f.adicionaAlmoco(a);
+			f.adicionaAlmoco(a);
 			f.adicionaUsuarioDietaAlmoco(user, b);
 			//f.removeUsuario(user.getCpf());
 			//user.setCpf(11010);

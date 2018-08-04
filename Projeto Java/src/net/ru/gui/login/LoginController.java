@@ -28,9 +28,16 @@ public class LoginController implements Initializable {
 
     @FXML
     private Button button_logar;
+   
+    public LoginController() throws IOException 
+	{
+    	this.f = Fachada.getInstance();
+	}
     
     @FXML
     void logar(ActionEvent event) {
+    	this.f = Fachada.getInstance();
+
 		try {
 			this.f.login(Integer.parseInt(caixa_usuario.getText()), caixa_senha.getText());
 			user = f.getLogado();

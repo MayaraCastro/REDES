@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import net.ru.negocio.gerenciamento.Fachada;
 
 public class ScreenManager {
 	
@@ -112,8 +113,10 @@ public class ScreenManager {
 	}
 
 	//close stages
-	public void fecharMainStage(){
+	public void fecharMainStage() throws Exception{
 		this.mainStage.close();
+		Fachada.getInstance().logout();
+		
 	}
 
 	public void minimizarMainStage(){

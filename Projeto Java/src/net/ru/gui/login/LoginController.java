@@ -37,7 +37,11 @@ public class LoginController implements Initializable {
     @FXML
     void logar(ActionEvent event) {
     	this.f = Fachada.getInstance();
-
+    	try {
+			f.conexao("root", "");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		try {
 			this.f.login(Integer.parseInt(caixa_usuario.getText()), caixa_senha.getText());
 			user = f.getLogado();

@@ -32,6 +32,8 @@ public class GerenciamentoCardapio {
 	}
 	
 	public void adicionaUsuarioVegetarianoAlmoco(Usuario user, Calendar dia) throws Exception {
+		if (dia.before(Calendar.getInstance()))
+			throw new Exception("Não é possível se inscrever em um dia anterior");
 		Almoco a = (Almoco) p.busca(Almoco.class, dia);
 		for (Usuario aux : a.getVegetariano()) {
 			if (aux.getCpf() == user.getCpf())
@@ -42,6 +44,8 @@ public class GerenciamentoCardapio {
 	}
 	
 	public void adicionaUsuarioDietaAlmoco(Usuario user, Calendar dia) throws Exception {
+		if (dia.before(Calendar.getInstance()))
+			throw new Exception("Não é possível se inscrever em um dia anterior");
 		Almoco a = (Almoco) p.busca(Almoco.class, dia);
 		for (Usuario aux : a.getDieta()) {
 			if (aux.getCpf() == user.getCpf())
@@ -52,6 +56,8 @@ public class GerenciamentoCardapio {
 	}
 	
 	public void adicionaUsuarioVegetarianoJantar(Usuario user, Calendar dia) throws Exception {
+		if (dia.before(Calendar.getInstance()))
+			throw new Exception("Não é possível se inscrever em um dia anterior");
 		Jantar j = (Jantar) p.busca(Jantar.class, dia);
 		for (Usuario aux : j.getVegetariano()) {
 			if (aux.getCpf() == user.getCpf())
@@ -62,6 +68,8 @@ public class GerenciamentoCardapio {
 	}
 	
 	public void adicionaUsuarioDietaJantar(Usuario user, Calendar dia) throws Exception {
+		if (dia.before(Calendar.getInstance()))
+			throw new Exception("Não é possível se inscrever em um dia anterior");
 		Jantar j = (Jantar) p.busca(Jantar.class, dia);
 		for (Usuario aux : j.getDieta()) {
 			if (aux.getCpf() == user.getCpf())

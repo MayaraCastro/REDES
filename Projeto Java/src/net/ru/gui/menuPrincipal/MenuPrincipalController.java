@@ -1,6 +1,9 @@
 package net.ru.gui.menuPrincipal;
 import net.ru.gui.*;
 import net.ru.negocio.*;
+
+import java.util.Calendar;
+
 import com.gluonhq.charm.glisten.control.CardPane;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -26,9 +29,14 @@ public class MenuPrincipalController {
     @FXML
     private Label sexta;
 
+    Calendar calendar = Calendar.getInstance();
+    int day = calendar.get(Calendar.DAY_OF_WEEK); 
+
     @FXML
     void quarta(MouseEvent event) {
-
+    	calendar.setWeekDate(calendar.getWeekYear(), Calendar.WEEK_OF_YEAR, 6);
+    	System.out.println(calendar.MONTH );
+    	
     }
 
     @FXML

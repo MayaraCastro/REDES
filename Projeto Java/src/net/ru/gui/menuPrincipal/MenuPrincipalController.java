@@ -49,6 +49,7 @@ public class MenuPrincipalController {
     	calendar.set(Calendar.getInstance().getWeekYear(),calendar.getTime().getMonth(), Calendar.DAY_OF_MONTH - sub);
     	System.out.println(calendar.getTime());
     	//System.out.println(Calendar..WEEK_OF_YEAR);
+    	
     	MenuPrincipalController.setData(Calendar.getInstance());
 
     	ScreenManager.getInstance().showCardapio();

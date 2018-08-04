@@ -20,7 +20,7 @@ public class TesteUser {
 		}
 		Usuario user = new Usuario(11010987, "12", "Aleatorio");
 		Calendar b = Calendar.getInstance();
-		b.set(2018, 8, 04);
+		//b.set(2018, 8, 04);
 		Almoco a = new Almoco(b);
 		try {
 			//f.insereUsuario(user);

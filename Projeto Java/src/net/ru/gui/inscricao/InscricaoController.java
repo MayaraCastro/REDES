@@ -47,7 +47,8 @@ public class InscricaoController {
     
     @FXML
     void salvar(ActionEvent event) throws Exception {
-    	if (dieta_jantar.isSelected()) {
+    	
+    	if (this.dieta_jantar.isSelected()) {
         	f.adicionaUsuarioDietaJantar(f.getLogado(), MenuPrincipalController.getData());
 
     	}else if(dietaAlmoco.isSelected()) {
@@ -60,6 +61,8 @@ public class InscricaoController {
     	}else if(vegetarianoAlmoco.isSelected()) {
         	f.adicionaUsuarioVegetarianoAlmoco(f.getLogado(), MenuPrincipalController.getData());
     	}
+    	
+    	ScreenManager.getInstance().showMenuPrincipal();
     }
 
     @FXML

@@ -19,8 +19,8 @@
             <JFXButton fx:id="botao_salvar" layoutX="141.0" layoutY="257.0" onAction="#salvar" ripplerFill="WHITE" style="-fx-background-color: ffd034;" text="Salvar" textFill="WHITE" />
             <ToggleButtonGroup fx:id="opcaoAlmoco" layoutX="45.0" layoutY="72.0" selectionType="SINGLE">
                <toggles>
-                  <RadioButton mnemonicParsing="false" text="Dieta  " />
-                  <RadioButton mnemonicParsing="false" text="Vegetariano" />
+                  <RadioButton fx:id="dietaAlmoco" mnemonicParsing="false" text="Dieta  " />
+                  <RadioButton fx:id="vegetarianoAlmoco" mnemonicParsing="false" text="Vegetariano" />
                </toggles>
             </ToggleButtonGroup>
             <Label layoutX="45.0" layoutY="52.0" text="Almoço">
@@ -30,8 +30,8 @@
             </Label>
             <ToggleButtonGroup fx:id="opcaoJantar" layoutX="45.0" layoutY="140.0" prefHeight="18.0" prefWidth="157.0" selectionType="SINGLE">
                <toggles>
-                  <RadioButton mnemonicParsing="false" text="Dieta  " />
-                  <RadioButton mnemonicParsing="false" text="Vegetariano" />
+                  <RadioButton fx:id="dieta_jantar" mnemonicParsing="false" text="Dieta  " />
+                  <RadioButton fx:id="vegetarianoJantar" mnemonicParsing="false" text="Vegetariano" />
                </toggles>
             </ToggleButtonGroup>
             <Label layoutX="45.0" layoutY="120.0" text="Jantar">

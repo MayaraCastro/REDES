@@ -9,17 +9,11 @@ public class TesteCalendar {
 	public static void main(String[] args) {
 		
 		Calendar hoje = Calendar.getInstance();
-		hoje.set(2018, Calendar.AUGUST, 05);
 		Calendar segunda = Calendar.getInstance();
-		segunda.add(Calendar.DATE, 1);
 		Calendar terca = Calendar.getInstance();
-		terca.add(Calendar.DATE, 1);
 		Calendar quarta = Calendar.getInstance();
-		quarta.add(Calendar.DATE, 1);
 		Calendar quinta = Calendar.getInstance();
-		quinta.add(Calendar.DATE, 1);
 		Calendar sexta = Calendar.getInstance();
-		sexta.add(Calendar.DATE, 1);
 		
 		if (hoje.getTime().getDay() == 6)
 			segunda.add(Calendar.DAY_OF_MONTH, 2);

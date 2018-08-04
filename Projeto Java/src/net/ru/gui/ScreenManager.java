@@ -95,13 +95,13 @@ public class ScreenManager {
 	public void showMenuPrincipal(){
 		this.loadMenuPrincipal();
 		this.mainStage.setScene(mainMenuPrincipal);
-		//this.mainStage.show();
+		this.mainStage.show();
 
 	}
 	public void showCardapio(){
 		this.loadCardapio();
 		this.mainStage.setScene(this.mainCardapio);
-		this.mainStage.show();
+		//this.mainStage.show();
 
 	}
 

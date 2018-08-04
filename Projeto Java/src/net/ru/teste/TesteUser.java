@@ -3,6 +3,7 @@ package net.ru.teste;
 import java.util.Calendar;
 
 import net.ru.negocio.beans.Almoco;
+import net.ru.negocio.beans.Jantar;
 import net.ru.negocio.beans.Usuario;
 import net.ru.negocio.gerenciamento.Fachada;
 
@@ -19,13 +20,14 @@ public class TesteUser {
 		}
 		Usuario user = new Usuario(11010987, "12", "Aleatorio");
 		Calendar b = Calendar.getInstance();
-		b.set(2018, 8, 05);
+		b.set(2018, 8, 04);
 		Almoco a = new Almoco(b);
 		try {
-			f.insereUsuario(user);
+			//f.insereUsuario(user);
 			f.login(user.getCpf(), user.getPassword());
-			f.adicionaAlmoco(a);
-			f.adicionaUsuarioDietaAlmoco(user, b);
+			//f.adicionaAlmoco(a);
+			f.adicionaJantar(new Jantar(b));
+			//f.adicionaUsuarioDietaAlmoco(user, b);
 			//f.removeUsuario(user.getCpf());
 			//user.setCpf(11010);
 			//user.setPassword("123");

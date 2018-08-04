@@ -12,14 +12,14 @@ public class MainGUI extends Application{
 		public void start(Stage primaryStage) {
 			ScreenManager.getInstance().setMainStage(primaryStage);
 			//ScreenManager.getInstance().showLogin();
-			ScreenManager.getInstance().showCardapio();
+			ScreenManager.getInstance().showMenuPrincipal();
 			
 			//ScreenManager.getInstance().showInscricao();
 
 		}
 		public static void main(String[] args) {
 			try {
-				Fachada.getInstance().conexao("abc", "");
+				Fachada.getInstance().conexao("root", "");
 				launch(args);
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, e.getMessage());

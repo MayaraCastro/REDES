@@ -27,13 +27,13 @@ public class Persistencia {
 		return instance;
 	}
 	
-	public void conexao(String hostname, String user, String password) {
+	public void conexao(String hostname, String user, String password) throws Exception {
 		Properties properties = new Properties();
 		properties.put("javax.persistence.jdbc.url", "jdbc:mysql://" + hostname + "/ru");
 		properties.put("javax.persistence.jdbc.user", user);
 		properties.put("javax.persistence.jdbc.password", password);
-		this.factory = Persistence.createEntityManagerFactory(unitPersistence, properties);
-		this.manager = this.factory.createEntityManager();
+		factory = Persistence.createEntityManagerFactory(unitPersistence, properties);
+		manager = factory.createEntityManager();
 	}
 	
 	public void fechaConexao() {

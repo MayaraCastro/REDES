@@ -18,6 +18,8 @@ public class Almoco {
 	private String sobremesa;
 	private String suco;
 	private String fastGrill;
+	private String especialVegetariano;
+	private String especialDieta;
 	@ManyToMany
 	@JoinTable(name = "almoco_vegetariano", joinColumns =
 	{@JoinColumn(name = "almoco")}, inverseJoinColumns =
@@ -96,6 +98,22 @@ public class Almoco {
 		this.fastGrill = fastGrill;
 	}
 
+	public String getEspecialVegetariano() {
+		return especialVegetariano;
+	}
+
+	public void setEspecialVegetariano(String especialVegetariano) {
+		this.especialVegetariano = especialVegetariano;
+	}
+
+	public String getEspecialDieta() {
+		return especialDieta;
+	}
+
+	public void setEspecialDieta(String especialDieta) {
+		this.especialDieta = especialDieta;
+	}
+
 	public List<Usuario> getVegetariano() {
 		return vegetariano;
 	}
@@ -112,8 +130,8 @@ public class Almoco {
 				+ "Sobremesa: "	+ sobremesa + "\n"
 				+ "Suco: " + suco + "\n"
 				+ "Fast Grill: " + fastGrill + "\n"
-				+ "Vegetariano: " + vegetariano	+ "\n"
-				+ "Dieta: " + dieta + "\n";
+				+ "Vegetariano: " + especialVegetariano	+ "\n"
+				+ "Dieta: " + especialDieta + "\n";
 	}
 	
 }

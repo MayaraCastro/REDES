@@ -5,6 +5,8 @@ import net.ru.negocio.gerenciamento.Fachada;
 
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import com.gluonhq.charm.glisten.control.Icon;
 import com.gluonhq.charm.glisten.control.ToggleButtonGroup;
 import com.jfoenix.controls.JFXButton;
@@ -46,20 +48,39 @@ public class InscricaoController {
 
     
     @FXML
-    void salvar(ActionEvent event) throws Exception {
+    void salvar(ActionEvent event)  {
     	
     	if (this.dieta_jantar.isSelected()) {
-        	f.adicionaUsuarioDietaJantar(f.getLogado(), MenuPrincipalController.getData());
+        	try {
+				f.adicionaUsuarioDietaJantar(f.getLogado(), MenuPrincipalController.getData());
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
 
     	}else if(dietaAlmoco.isSelected()) {
-        	f.adicionaUsuarioDietaAlmoco(f.getLogado(), MenuPrincipalController.getData());
+        	try {
+				f.adicionaUsuarioDietaAlmoco(f.getLogado(), MenuPrincipalController.getData());
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e.getMessage());
+
+			}
 
     	}
     	
     	if(vegetarianoJantar.isSelected()) {
-        	f.adicionaUsuarioVegetarianoJantar(f.getLogado(), MenuPrincipalController.getData());
+        	try {
+				f.adicionaUsuarioVegetarianoJantar(f.getLogado(), MenuPrincipalController.getData());
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e.getMessage());
+
+			}
     	}else if(vegetarianoAlmoco.isSelected()) {
-        	f.adicionaUsuarioVegetarianoAlmoco(f.getLogado(), MenuPrincipalController.getData());
+        	try {
+				f.adicionaUsuarioVegetarianoAlmoco(f.getLogado(), MenuPrincipalController.getData());
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e.getMessage());
+
+			}
     	}
     	
     	ScreenManager.getInstance().showMenuPrincipal();

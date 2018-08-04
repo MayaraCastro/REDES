@@ -44,13 +44,12 @@ public class MenuPrincipalController {
 
     @FXML
     void quarta(MouseEvent event) {
-    	int sub = calendar.get(Calendar.DAY_OF_WEEK) - Calendar.WEDNESDAY; 
-  
-    	calendar.set(Calendar.getInstance().getWeekYear(),calendar.getTime().getMonth(), Calendar.DAY_OF_MONTH - sub);
-    	System.out.println(calendar.getTime());
-    	//System.out.println(Calendar..WEEK_OF_YEAR);
+    	if (Calendar.getInstance().getTime().getDay() == 6)
+			calendar.add(Calendar.DAY_OF_MONTH, 4);
+		else
+			calendar.add(Calendar.DATE, 3 - Calendar.getInstance().getTime().getDay());
     	
-    	MenuPrincipalController.setData(Calendar.getInstance());
+    	MenuPrincipalController.setData(calendar);
 
     	ScreenManager.getInstance().showCardapio();
 
@@ -58,26 +57,49 @@ public class MenuPrincipalController {
 
     @FXML
     void quinta(MouseEvent event) {
-    	MenuPrincipalController.setData(Calendar.getInstance());
+    	if (Calendar.getInstance().getTime().getDay() == 6)
+			calendar.add(Calendar.DAY_OF_MONTH, 5);
+		else
+			calendar.add(Calendar.DATE, 4 - Calendar.getInstance().getTime().getDay());
+    	
+    	MenuPrincipalController.setData(calendar);
     	ScreenManager.getInstance().showCardapio();
 
     }
 
     @FXML
     void segunda(MouseEvent event) {
-    	MenuPrincipalController.setData(Calendar.getInstance());
+    	
+    	if (Calendar.getInstance().getTime().getDay() == 6)
+			calendar.add(Calendar.DAY_OF_MONTH, 2);
+		else
+			calendar.add(Calendar.DATE, 1 - Calendar.getInstance().getTime().getDay());
+		
+    	MenuPrincipalController.setData(calendar);
     	ScreenManager.getInstance().showCardapio();
     }
 
     @FXML
     void sexta(MouseEvent event) {
-    	MenuPrincipalController.setData(Calendar.getInstance());
+    	if (Calendar.getInstance().getTime().getDay() == 6)
+			calendar.add(Calendar.DAY_OF_MONTH, 6);
+		else
+			calendar.add(Calendar.DATE, 5 - Calendar.getInstance().getTime().getDay());
+    	
+    	MenuPrincipalController.setData(calendar);
     	ScreenManager.getInstance().showCardapio();
     }
 
     @FXML
     void terca(MouseEvent event) {
-    	MenuPrincipalController.setData(Calendar.getInstance());
+    	
+    	if (Calendar.getInstance().getTime().getDay() == 6)
+			calendar.add(Calendar.DAY_OF_MONTH, 3);
+		else
+			calendar.add(Calendar.DATE, 2 - Calendar.getInstance().getTime().getDay());
+		
+    	
+    	MenuPrincipalController.setData(calendar);
     	ScreenManager.getInstance().showCardapio();
 
     }

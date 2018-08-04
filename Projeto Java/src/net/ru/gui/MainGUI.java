@@ -9,20 +9,21 @@ import net.ru.negocio.gerenciamento.Fachada;
 public class MainGUI extends Application{
 		
 		@Override
-		public void start(Stage primaryStage) {
+		public void start(Stage primaryStage) throws Exception {
+			try {
+				Fachada.getInstance().conexao("root", "");
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e.getMessage());
+				throw new Exception(e);
+			}
 			ScreenManager.getInstance().setMainStage(primaryStage);
-			//ScreenManager.getInstance().showLogin();
-			ScreenManager.getInstance().showMenuPrincipal();
+			ScreenManager.getInstance().showLogin();
+			//ScreenManager.getInstance().showCardapio();
 			
 			//ScreenManager.getInstance().showInscricao();
 
 		}
 		public static void main(String[] args) {
-			try {
-				Fachada.getInstance().conexao("root", "");
-				launch(args);
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, e.getMessage());
-			}
+			launch(args);
 		} 
 	}

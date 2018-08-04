@@ -103,5 +103,17 @@ public class Almoco {
 	public List<Usuario> getDieta() {
 		return dieta;
 	}
+
+	@Override
+	public String toString() {
+		return "Salada: " + salada + "\n"
+				+ "Guarnicao: " + guarnicao + "\n"
+				+ "Principal: " + principal + "\n"
+				+ "Sobremesa: "	+ sobremesa + "\n"
+				+ "Suco: " + suco + "\n"
+				+ "Fast Grill: " + fastGrill + "\n"
+				+ "Vegetariano: " + vegetariano	+ "\n"
+				+ "Dieta: " + dieta + "\n";
+	}
 	
 }

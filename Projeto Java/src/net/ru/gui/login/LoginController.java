@@ -1,18 +1,22 @@
 package net.ru.gui.login;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import net.ru.negocio.beans.*;
 import net.ru.negocio.gerenciamento.Fachada;
 import net.ru.gui.*;
-public class LoginController {
+
+public class LoginController implements Initializable {
 
 	private Fachada f;
 	private static Usuario user;
@@ -51,6 +55,11 @@ public class LoginController {
     
     public static void setUser(Usuario user) {
 		LoginController.user = user;
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		f = Fachada.getInstance();
 	}
 
 }

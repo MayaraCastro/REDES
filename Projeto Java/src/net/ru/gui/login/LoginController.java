@@ -10,10 +10,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import net.ru.negocio.beans.*;
+import net.ru.negocio.gerenciamento.Fachada;
 import net.ru.gui.*;
-import net.ru.negocio.*;
 public class LoginController {
 
+	private Fachada f;
 	private static Usuario user;
 
     @FXML
@@ -28,7 +29,8 @@ public class LoginController {
     @FXML
     void logar(ActionEvent event) {
 		try {
-			user = this.fachada.logar(caixa_usuario.getText(), caixa_senha.getText());
+			this.f.login(Integer.parseInt(caixa_usuario.getText()), caixa_senha.getText());
+			user = f.getLogado();
 			//JOptionPane.showMessageDialog(null,"Login com sucesso!" );
 			
 			this.chamarTelaPrincipal();

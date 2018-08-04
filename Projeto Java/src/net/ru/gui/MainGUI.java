@@ -11,8 +11,9 @@ public class MainGUI extends Application{
 		@Override
 		public void start(Stage primaryStage) {
 			ScreenManager.getInstance().setMainStage(primaryStage);
-			ScreenManager.getInstance().showLogin();
-			//ScreenManager.getInstance().showCardapio();
+			//ScreenManager.getInstance().showLogin();
+			ScreenManager.getInstance().showCardapio();
+			
 			//ScreenManager.getInstance().showInscricao();
 
 		}

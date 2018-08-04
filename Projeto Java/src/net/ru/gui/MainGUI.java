@@ -1,7 +1,10 @@
 package net.ru.gui;
 
+import javax.swing.JOptionPane;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
+import net.ru.negocio.gerenciamento.Fachada;
 
 public class MainGUI extends Application{
 		
@@ -14,6 +17,11 @@ public class MainGUI extends Application{
 
 		}
 		public static void main(String[] args) {
-			launch(args);
+			try {
+				Fachada.getInstance().conexao("abc", "");
+				launch(args);
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, e.getMessage());
+			}
 		} 
 	}

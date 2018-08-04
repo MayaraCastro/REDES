@@ -49,8 +49,8 @@ public class CardapioController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		String almoco = f.getAlmoco(MenuPrincipalController.getData());
-    	String jantar = f.getJantar(MenuPrincipalController.getData());
+		String almoco = f.getAlmoco(MenuPrincipalController.getData()).toString();
+    	String jantar = f.getJantar(MenuPrincipalController.getData()).toString();
     	texto_almoco.setText("aaaaaaa "+"\n"+"bbbbbb");
 		
 	}

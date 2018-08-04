@@ -76,11 +76,11 @@ public class MenuPrincipalController {
 
     }
     
-    public Calendar getData() {
-    	return this.data;
+    public static Calendar getData() {
+    	return data;
     }
-    public void setData(Calendar data) {
-    	this.data = data;
+    public static void setData(Calendar date) {
+    	data = date;
     }
 
 }

@@ -42,18 +42,15 @@ public class TesteCalendar {
 		else
 			sexta.add(Calendar.DATE, 5 - hoje.getTime().getDay());
 		
-		System.out.println(segunda.getTime());
-		System.out.println(terca.getTime());
-		System.out.println(quarta.getTime());
-		System.out.println(quinta.getTime());
-		System.out.println(sexta.getTime());
-		
 		List<Calendar> dias = new ArrayList<Calendar>();
 		dias.add(segunda);
 		dias.add(terca);
 		dias.add(quarta);
 		dias.add(quinta);
 		dias.add(sexta);
+		
+		for(Calendar dia : dias) 
+			System.out.println(dia.getTime());
 		
 	}
 	

@@ -10,6 +10,8 @@
 
 		<!-- entidades mapeadas nessa unidade de persistência -->
 		<class>net.ru.negocio.beans.Usuario</class>
+		<class>net.ru.negocio.beans.Almoco</class>
+		<class>net.ru.negocio.beans.Jantar</class>
 
 		<properties>
 			<!-- dados da conexao -->

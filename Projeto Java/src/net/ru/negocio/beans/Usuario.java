@@ -1,6 +1,8 @@
 package net.ru.negocio.beans;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Usuario {
@@ -11,10 +13,11 @@ public class Usuario {
 	private String password;
 	@Column(nullable = false)
 	private String nome;
-	
-	//Aparentemente o Hibernate força a existencia de um construtor padrão
-	public Usuario() {	}
-	
+
+	// Aparentemente o Hibernate força a existencia de um construtor padrão
+	public Usuario() {
+	}
+
 	public Usuario(int cpf, String password, String nome) {
 		this.cpf = cpf;
 		this.password = password;
@@ -44,5 +47,5 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
 }

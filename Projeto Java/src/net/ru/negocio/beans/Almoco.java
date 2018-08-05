@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Almoco {
@@ -21,27 +27,25 @@ public class Almoco {
 	private String especialVegetariano;
 	private String especialDieta;
 	@ManyToMany
-	@JoinTable(name = "almoco_vegetariano", joinColumns =
-	{@JoinColumn(name = "almoco")}, inverseJoinColumns =
-	{@JoinColumn(name = "usuario_vegetariano")})
+	@JoinTable(name = "almoco_vegetariano", joinColumns = { @JoinColumn(name = "almoco") }, inverseJoinColumns = {
+			@JoinColumn(name = "usuario_vegetariano") })
 	private List<Usuario> vegetariano;
 	@ManyToMany
-	@JoinTable(name = "almoco_dieta", joinColumns =
-	{@JoinColumn(name = "almoco")}, inverseJoinColumns =
-	{@JoinColumn(name = "usuario_dieta")})
+	@JoinTable(name = "almoco_dieta", joinColumns = { @JoinColumn(name = "almoco") }, inverseJoinColumns = {
+			@JoinColumn(name = "usuario_dieta") })
 	private List<Usuario> dieta;
-	
+
 	public Almoco() {
 		this.vegetariano = new ArrayList<Usuario>();
 		this.dieta = new ArrayList<Usuario>();
 	}
-	
+
 	public Almoco(Calendar dia) {
 		this.dia = dia;
 		this.vegetariano = new ArrayList<Usuario>();
 		this.dieta = new ArrayList<Usuario>();
 	}
-	
+
 	public Calendar getDia() {
 		return dia;
 	}
@@ -124,14 +128,9 @@ public class Almoco {
 
 	@Override
 	public String toString() {
-		return "Salada: " + salada + "\n"
-				+ "Guarnicao: " + guarnicao + "\n"
-				+ "Principal: " + principal + "\n"
-				+ "Sobremesa: "	+ sobremesa + "\n"
-				+ "Suco: " + suco + "\n"
-				+ "Fast Grill: " + fastGrill + "\n"
-				+ "Vegetariano: " + especialVegetariano	+ "\n"
-				+ "Dieta: " + especialDieta + "\n";
+		return "Salada: " + salada + "\n" + "Guarnicao: " + guarnicao + "\n" + "Principal: " + principal + "\n"
+				+ "Sobremesa: " + sobremesa + "\n" + "Suco: " + suco + "\n" + "Fast Grill: " + fastGrill + "\n"
+				+ "Vegetariano: " + especialVegetariano + "\n" + "Dieta: " + especialDieta + "\n";
 	}
-	
+
 }

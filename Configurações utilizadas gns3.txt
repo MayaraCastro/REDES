@@ -1,4 +1,4 @@
-	switch:
+conf	switch:
 						vlans 25 e 35
 vlan database
 vlan 25 name VLAN25

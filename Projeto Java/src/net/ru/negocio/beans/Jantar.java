@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Jantar {
@@ -21,21 +27,19 @@ public class Jantar {
 	private String especialVegetariano;
 	private String especialDieta;
 	@ManyToMany
-	@JoinTable(name = "jantar_vegetariano", joinColumns =
-	{@JoinColumn(name = "jantar")}, inverseJoinColumns =
-	{@JoinColumn(name = "usuario_vegetariano")})
+	@JoinTable(name = "jantar_vegetariano", joinColumns = { @JoinColumn(name = "jantar") }, inverseJoinColumns = {
+			@JoinColumn(name = "usuario_vegetariano") })
 	private List<Usuario> vegetariano;
 	@ManyToMany
-	@JoinTable(name = "jantar_dieta", joinColumns =
-	{@JoinColumn(name = "jantar")}, inverseJoinColumns =
-	{@JoinColumn(name = "usuario_dieta")})
+	@JoinTable(name = "jantar_dieta", joinColumns = { @JoinColumn(name = "jantar") }, inverseJoinColumns = {
+			@JoinColumn(name = "usuario_dieta") })
 	private List<Usuario> dieta;
-	
+
 	public Jantar() {
 		this.vegetariano = new ArrayList<Usuario>();
 		this.dieta = new ArrayList<Usuario>();
 	}
-	
+
 	public Jantar(Calendar dia) {
 		this.dia = dia;
 		this.vegetariano = new ArrayList<Usuario>();
@@ -124,14 +128,9 @@ public class Jantar {
 
 	@Override
 	public String toString() {
-		return "Salada: " + salada + "\n"
-				+ "Guarnicao: " + guarnicao + "\n"
-				+ "Principal: " + principal + "\n"
-				+ "Sobremesa: "	+ sobremesa + "\n"
-				+ "Suco: " + suco + "\n"
-				+ "Fast Grill: " + fastGrill + "\n"
-				+ "Vegetariano: " + especialVegetariano	+ "\n"
-				+ "Dieta: " + especialDieta + "\n";
+		return "Salada: " + salada + "\n" + "Guarnicao: " + guarnicao + "\n" + "Principal: " + principal + "\n"
+				+ "Sobremesa: " + sobremesa + "\n" + "Suco: " + suco + "\n" + "Fast Grill: " + fastGrill + "\n"
+				+ "Vegetariano: " + especialVegetariano + "\n" + "Dieta: " + especialDieta + "\n";
 	}
-	
+
 }

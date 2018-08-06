@@ -34,6 +34,7 @@
 
 <?import com.gluonhq.charm.glisten.control.CardPane?>
 <?import com.gluonhq.charm.glisten.mvc.View?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -67,6 +68,7 @@
                   <Image url="@chinese.png" />
                </image>
             </ImageView>
+            <JFXButton layoutX="269.0" layoutY="13.0" onAction="#log_out" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: ffa034;" text="Sair" textFill="WHITE" />
          </children>
       </Pane>
    </top>

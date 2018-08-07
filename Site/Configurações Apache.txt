@@ -1,0 +1,8 @@
+no httpd.conf
+ErrorDocument 404 /RU%20Digital/404.html
+ErrorDocument 400 /RU%20Digital/400.html
+
+no php.ini		(retirar os ';')
+;extension=php_openssl.dll
+;extension=php_sockets.dll
+;extension=php_smtp.dll	(caso tenha)

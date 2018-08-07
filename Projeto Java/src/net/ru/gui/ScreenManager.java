@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import net.ru.negocio.gerenciamento.Fachada;
 
 public class ScreenManager {
@@ -78,7 +79,7 @@ public class ScreenManager {
 		this.mainStage = mainStage;
 		this.mainStage.setTitle("R.U. Digital");
 		this.mainStage.setResizable(false);
-		// this.mainStage.initStyle(StageStyle.UNDECORATED);
+		 this.mainStage.initStyle(StageStyle.UNDECORATED);
 	}
 
 	// CHAMADA DE TELAS

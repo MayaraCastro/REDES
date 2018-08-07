@@ -6,15 +6,17 @@ import java.util.ResourceBundle;
 
 import com.gluonhq.charm.glisten.control.CardPane;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import net.ru.gui.ScreenManager;
+import net.ru.negocio.gerenciamento.Fachada;
 
 @SuppressWarnings("deprecation")
 public class MenuPrincipalController implements Initializable {
-
+	Fachada f;
 	private static Calendar data;
 
 	@FXML
@@ -36,7 +38,18 @@ public class MenuPrincipalController implements Initializable {
 	private Label sexta;
 
 	private Calendar calendar;
-
+	
+	 @FXML
+	    void log_out(ActionEvent event) {
+		try {
+			f.logout();
+			ScreenManager.getInstance().fecharMainStage();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	 }
+	 
 	@FXML
 	void quarta(MouseEvent event) {
 		if (Calendar.getInstance().getTime().getDay() == 6)

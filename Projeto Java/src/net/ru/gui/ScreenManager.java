@@ -118,7 +118,6 @@ public class ScreenManager {
 	// close stages
 	public void fecharMainStage() throws Exception {
 		this.mainStage.close();
-		Fachada.getInstance().logout();
 
 	}
 

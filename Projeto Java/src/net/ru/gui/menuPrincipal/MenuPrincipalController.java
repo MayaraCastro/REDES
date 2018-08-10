@@ -122,6 +122,7 @@ public class MenuPrincipalController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		this.calendar = Calendar.getInstance();
+		this.f = Fachada.getInstance();
 	}
 
 }
